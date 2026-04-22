@@ -11,11 +11,10 @@ class Denoiser(nn.Module):
         img = image.squeeze().permute(1,2,0).cpu().numpy()
         img = (img * 255).astype(np.uint8)
 
-		# tuned values (important)
         denoised = cv2.fastNlMeansDenoisingColored(
 			img,
 			None,
-			h=11,         # strength (increase noise removal)
+			h=11,        
 			hColor=11,
 			templateWindowSize=7,
 			searchWindowSize=21

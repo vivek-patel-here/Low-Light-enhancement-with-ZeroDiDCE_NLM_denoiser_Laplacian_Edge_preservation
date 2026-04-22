@@ -64,4 +64,4 @@ class enhance_net_nopool(nn.Module):
 		enhance_image = denoiser.Denoiser().denoisePreserveDetail(enhance_image)
 
 
-		return  enhance_image,x_r
+		return  enhance_image,x_r 
