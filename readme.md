@@ -1,95 +1,43 @@
-# Low-Light Image Enhancement with Zero-DiDCE and NLM Denoising and Laplacian Edge preservation
+# 🧠 Zero DiDCE based Low Light Enhancement with edge Preserving Noise Supression
 
-## Project Overview
+An improved low-light enhancement framework which combines Zero-DiDCE based illumination enhancement with a post-processing denoising and edge-preserving refinement module. The proposed refinement stage reduces enhancement generated noise while preserving structural details and image sharpness. Experiments performed on LOL dataset show that the proposed method achieves competitive performance with 18.36 PSNR, 0.743 SSIM and 4.41 NIMA. 
 
-This project presents a lightweight deep learning pipeline for enhancing low-light images and reducing noise artifacts introduced during enhancement. The system is built on a Zero-DiDCE inspired zero-reference low-light enhancement network, followed by an adaptive denoising module for perceptual quality improvement.
+![](./result/img1.png)
 
-Low-light images typically suffer from:
+## Dataset Used : LOL dataset
+The project uses LoL dataset for training and testing.<br>
+Link : https://www.kaggle.com/datasets/soumikrakshit/lol-dataset
 
-* poor visibility
-* low contrast
-* color distortion
-* amplified sensor noise
+## Features
+- Zero Reference Low Light Enhancement
+- Adaptive Brightness Correction
+- Dynamic Enhacement Strength
+- Adaptive Iteration Control
+- Noise Suppression Module
+- Edge Preservation / Sharpness Recovery
 
-This project addresses these issues using a two-stage enhancement framework:
+## Tech Stack 
 
-1. **Low-light enhancement using iterative curve estimation**
-2. **Adaptive denoising with edge-preserving refinement**
+- Programming Language : Python
+- Deep Learning framework : Pytorch
+- Digital Image Processing : PIL , Numpy , OpenCV
+- IDE : Visual Studio Code
+- Hardware : Apple Silicon MPS (Mac air M4)
 
+## Architecture
+The proposed pipeline uses two stage enhancement framework : 
+- Low Light Enhancement using iterative curve estimation
+- Adaptive denoising with edge preserving refinement
+
+![](./result/flow_diDce.png)
 
 ## How to run Program
-
-- Step 1 : Insert the test Image in  directory `data/test_data/lol-pre`.
-- Step 2 : pip install -r requirements.txt
-- step 3 : python lowlight_test.py
-- step 4 : Output will be saved in the directory `data/result_ours/lol-pre`.
-
-
-
-## Tech Stack
-
-### Programming Language
-
-* Python
-
-### Deep Learning Framework
-
-* PyTorch
-
-### Image Processing
-
-* OpenCV
-* PIL (Python Imaging Library)
-* NumPy
-
-### Development Tools
-
-* VS Code
-* Jupyter / terminal
-
-### Hardware Support
-
-* CPU
-* GPU (CUDA)
-* Apple Silicon (MPS)
-
-### Dataset : LOL Dataset (https://www.kaggle.com/datasets/soumikrakshit/lol-dataset)
-
-
-
-## System Architecture
-
-```text
-Input Low-Light Image
-        │
-        ▼
-Zero-DiDCE Enhancement Network
-(learns enhancement curves)
-        │
-        ▼
-Enhanced Image
-        │
-        ▼
-Adaptive Denoising Module
-(NLM + edge-preserving blending)
-        │
-        ▼
-Final Enhanced Output
-```
-
-
-
-
-## Result 
-- *Input Image*<br>
-![Logo](data/test_data/lol-pre/179.jpg). 
-
-- *Low Light Enhanced Image*<br>
-![Logo](data/result_preserved/lol-pre/179.jpg)
-
-- *Final Denoised and edge preserved Outut Image*<br>
-![Logo](data/result_ours/lol-pre/179.jpg)
-
+- Git clone https://github.com/vivek-patel-here/Low-Light-enhancement-with-ZeroDiDCE_NLM_denoiser_Laplacian_Edge_preservation.git
+- RUN `cd Low-Light-enhancement-with-ZeroDiDCE_NLM_denoiser_Laplacian_Edge_preservation`
+- RUN `pip install -r requirements.txt`
+- Insert the test images in the dir `data/test_data/lol-pre`
+- RUN `python lowlight_test.py`
+- The output will be save in the dir `data/result_ours/lol-pre`
 
 
 
